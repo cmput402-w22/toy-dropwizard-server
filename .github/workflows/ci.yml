@@ -31,7 +31,7 @@ jobs:
       
     - name: Build with Gradle
       working-directory: .
-      run: ./gradlew build -x text
+      run: ./gradlew build -x test
       
     - name: Run tests
       working-directory: .
