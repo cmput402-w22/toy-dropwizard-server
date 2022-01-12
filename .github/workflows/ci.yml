@@ -1,0 +1,23 @@
+name: continuous-integration-example
+
+on:
+  push:
+    branches:
+        - master
+jobs:
+  build-and-test-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      
+      - name: set up JDK 1.8 to run Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: build with Gradle!
+        working-directory: .
+        run: ./gradlew build -x test
+
+      - name: run test, please!
+        working-directory: .
+        run: ./gradlew test
