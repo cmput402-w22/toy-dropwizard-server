@@ -4,7 +4,7 @@ on:
   push:
     branches:
         - main
-  jobs:
+jobs:
   build-and-test-please:
     runs-on: ubuntu-latest
     steps:
