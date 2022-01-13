@@ -1,0 +1,43 @@
+name: Awesome CI
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+
+      - name: Setting up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adpot'
+      - name: building the gradle application
+        working-directory: .
+        run: |
+          chmod +x gradlew
+          ./gradlew build -x test
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v2
+
+
+      - name: Setting up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adpot'
+
+      - name: unit testing
+        working-directory: .
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+        
+
+
