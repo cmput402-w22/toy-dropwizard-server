@@ -3,8 +3,8 @@ name: continuous-integration-example
 on:
   push:
     branches:
-        - master
-jobs:
+        - main
+  jobs:
   build-and-test-please:
     runs-on: ubuntu-latest
     steps:
