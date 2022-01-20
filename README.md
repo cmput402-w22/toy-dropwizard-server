@@ -1,3 +1,4 @@
+# Toy Dropwizard Server
 A minimal Dropwizard getting started project using Gradle. Use [shadowJar plugin](https://github.com/johnrengelman/shadow) to create fat jars.
 
 To create a fat jar:
